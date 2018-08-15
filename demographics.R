@@ -1,7 +1,7 @@
-# Arbeitsverzeichnis setzen
+# set working directory
 setwd("C:/Users/Lukas/Dropbox/Studium/TU Berlin/Masterarbeit/Analysis/")
 
-# Daten einlesen
+# read in data set
 data <- read.csv("./intro_questions_data/intro_data.csv", sep=";")
 
 
