@@ -1,5 +1,4 @@
 import re
-from csv import writer
 
 for i in range(31):
     # convert range to vp number
@@ -16,8 +15,8 @@ for i in range(31):
         # 64 lines of data + header + trailing newline
         regular_line_count = 66
         if(len(lines) > regular_line_count):
-            # reduce to data lines + header
-            lines = lines[0:regular_line_count - 1]
+            # reduce length to data lines + header and join to string for writing
+            cleaned_content = '\n'.join(lines[0:regular_line_count - 1])
 
         # write contents to new file
         with open('experiment_data/experiment-data_VP'+vp_number+'.csv', 'w') as new_file:
