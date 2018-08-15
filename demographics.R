@@ -1,8 +1,8 @@
 # Arbeitsverzeichnis setzen
-setwd("C:\\Users\\Lukas\\Dropbox\\Studium\\TU Berlin\\Masterarbeit\\Analysis\\intro_questions_data")
+setwd("C:/Users/Lukas/Dropbox/Studium/TU Berlin/Masterarbeit/Analysis/")
 
 # Daten einlesen
-data <- read.csv("./intro_data.csv", sep=";")
+data <- read.csv("./intro_questions_data/intro_data.csv", sep=";")
 
 
 names(data)[names(data) == "Wie.häufig.überqueren.Sie.die.Straße.als.Fußgänger."] <- "ped_freq"
