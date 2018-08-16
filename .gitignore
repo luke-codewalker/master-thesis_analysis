@@ -1,8 +1,9 @@
-# data directoriea
+# data directories
 *_data
 
-# R history files
+# R history and profile files
 .Rhistory
+.RProfile
 
 # temporary .py files produced by linter
 *.py.*.py
