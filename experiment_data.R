@@ -23,6 +23,8 @@ datasets = lapply(datasets, function(x){
   x$delayCondition <- ifelse(substr(as.character(x$condition),2,2)=="a",0,1)
   # signalCondition: 0 = none, 1 = eyes, 2 = ampel, 3 = both
   x$signalCondition <- as.numeric(substr(as.character(x$condition),1,1))%%4
+  # correctDecision: 0 = no, 1 = yes
+  x$correctDecision <- ifelse(x$stopCondition == x$reactionHand,1,0)
   return(x)
   })
 
@@ -40,3 +42,9 @@ xtabs(~reactionHand+signalCondition+stopCondition, dataframe)/nrow(dataframe)*2
 
 # cross table of decision over delay condition for all participants
 xtabs(~reactionHand+delayCondition, dataframe)/nrow(dataframe)                  
+
+# cross table of correct decision over stop condition for all participants
+xtabs(~correctDecision+stopCondition, dataframe)/nrow(dataframe) *2
+
+# cross table of correct decision over signal condition for all participants
+xtabs(~correctDecision+signalCondition, dataframe)/nrow(dataframe) *4
